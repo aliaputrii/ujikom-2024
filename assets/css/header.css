@@ -1,0 +1,15 @@
+#header{
+    background-color:lightslategray;
+    padding: 2rem;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+#header a{
+    float: right;
+    margin-left: 1rem;
+    color: rgb(0, 0, 0);
+
+}
+/* #header #week-view:hover{
+
+} */

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/weeks.css">
+<div id="week-view">
+    <p id="Dates">
+    </p>
+
+
+
+<%for(habit of habits){%>
+   
+<p class="week-status">
+    <span id="name">  
+        <%=habit.habitName%>
+    </span>
+    <span id="status">
+    <%for(let i=0;i<habit.habitStatus.length;i++){%>
+    <span>
+        <a href="/habit/changeStatus/<%=habit._id%>/<%=i%>" class="habit-status-link" data-value="<%=habit.habitStatus[i].status%>">
+            <%if(habit.habitStatus[i].status=='done'){%>
+                ✅
+                <%}else if(habit.habitStatus[i].status=='not_done'){%>
+                    ❌
+                    <%}else if(habit.habitStatus[i].status=='none'){%>
+                        ⬛️
+                        <%}%>
+        </a> 
+    </span>
+    <%}%>
+</span>
+</p>
+<%}%>
+</div>
+
+<div id="Dates"></div>
+
+<script>
+    var monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    // Inisialisasi variabel tanggal awal
+    var currentDate = new Date();
+
+    for (let i = 0; i < 7; i++) {
+        let $spanElement = $('<span>');
+
+        // Mendapatkan tanggal terkini
+        let currentDay = currentDate.getDate();
+        let currentMonth = monthNames[currentDate.getMonth()];
+
+        // Menambahkan teks tanggal ke elemen span
+        $spanElement.text(currentDay + " " + currentMonth);
+
+        // Menambahkan elemen span ke elemen dengan ID 'Dates'
+        $('#Dates').append($spanElement);
+
+        // Mengurangi 1 hari dari tanggal terkini untuk maju ke tanggal selanjutnya
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+</script>

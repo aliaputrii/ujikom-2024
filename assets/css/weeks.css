@@ -1,0 +1,39 @@
+#Dates {
+    width: 65%;
+    margin-left: 26%;
+}
+
+#Dates span {
+    color: rgb(0, 0, 0);
+    font-size: 1.4rem;
+    width: 12%;
+    display: inline-block;
+    margin-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Tambahkan garis pemisah */
+}
+
+.week-status {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.568); /* Tambahkan garis pemisah */
+}
+
+.week-status span {
+    margin-right: 7.4%;
+} 
+
+.week-status #name {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 5px;
+    color: rgb(94, 126, 160);
+    width: 210px ;
+    margin: 0;
+}
+
+.week-status #status span {
+    width: 9%;
+    text-align: center;
+    display: inline-block;
+}
