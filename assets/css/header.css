@@ -10,6 +10,9 @@
     color: rgb(0, 0, 0);
 
 }
+#header img {
+    margin-right: 13px; /* Adjust the margin as needed */
+  }
 /* #header #week-view:hover{
 
 } */

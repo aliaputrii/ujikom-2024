@@ -5,7 +5,7 @@ const Habit = require('../models/habit');
 module.exports.createHabit = async function (req, res) {
     try {
         console.log(req.user);
-        let habitexist = await Habit.findOne({user : req.user, habitName: req.body.habitName });
+        let habitexist = await Habit.findOne({ user: req.user, habitName: req.body.habitName });
         if (habitexist) {
             return res.redirect('back');
         } else {
@@ -53,20 +53,20 @@ module.exports.updateStatus = async function (req, res) {
         let habit = await Habit.findById(req.params.id);
         let index = req.params.index;
         let status = habit.habitStatus[index].status;
-        if(status=='none'){
+        if (status == 'none') {
             status = 'done';
-        }else if(status=='not_done'){
+        } else if (status == 'not_done') {
             status = 'none';
-        }else if(status =='done'){
+        } else if (status == 'done') {
             status = 'not_done';
         }
         habit.habitStatus[index].status = status;
         habit.save();
         // return res.redirect('back');
         return res.status(200).json({
-            message : 'Reaction Created',
-            data:{
-                status :status
+            message: 'Reaction Created',
+            data: {
+                status: status
             }
         });
 

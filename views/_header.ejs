@@ -1,11 +1,13 @@
 <!-- menampilkan header berdasarkan status masuk pengguna (user) -->
 <link rel="stylesheet" href="/css/header.css">
 <p id="header">
+<img width="41" height="38" src="https://img.icons8.com/?size=100&id=gxT6eNC3ejXJ&format=png" />
     Habit Forge
     <% if(locals.user) { %>
         <a href="/sign-out">Sign Out</a>
         <a href="/habit"><%= locals.user.username %></a>
-        <a href="/habit"><img width="38" height="38" src="https://img.icons8.com/ios-filled/50/000000/tasks.png" alt="tasks"/></a>
+        <a href="/rekomendasi"><img width="38" height="38" src="https://img.icons8.com/?size=96&id=85767&format=png" /></a>
+        <a href="/habit"><img width="38" height="38" src="https://img.icons8.com/?size=96&id=86475&format=png" alt="tasks"/></a>
         <a href="/habit/week" id="week-view"><img width="35" height="35" src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/000000/external-calender-time-and-date-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png" alt="external-calender-time-and-date-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto"/></a>
     <% } else { %>
         <a href="/">Sign In</a>
